@@ -117,6 +117,18 @@
         });
         promise.then(result=>console.log(result)).catch(error=>console.log(error)).
         finally(msg=>console.log("done"));
+
+        async function userdata() {
+                try{
+                    let data = await fetch('https://dummyjson.com/products');
+                    let updatedData=await data.json;
+                    console.log(updatedData);
+                }
+                catch(error){
+                    console.log("Not fetched"+error);
+                }
+            }
+            userdata();
         
     </script>
 </body>
